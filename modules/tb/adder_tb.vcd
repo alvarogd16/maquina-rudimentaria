@@ -1,0 +1,49 @@
+$date
+	Wed Mar  2 15:30:26 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module adder_tb $end
+$var wire 8 ! out [7:0] $end
+$var reg 8 " in_a [7:0] $end
+$var reg 8 # in_b [7:0] $end
+$scope module ADD8_1 $end
+$var wire 8 $ in_a [7:0] $end
+$var wire 8 % in_b [7:0] $end
+$var wire 8 & out [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b110 &
+b1 %
+b101 $
+b1 #
+b101 "
+b110 !
+$end
+#1
+b1100100 #
+b1100100 %
+b1101101 !
+b1101101 &
+b1001 "
+b1001 $
+#2
+b1001 #
+b1001 %
+b1000 !
+b1000 &
+b11111111 "
+b11111111 $
+#3
+b1 !
+b1 &
+b10 #
+b10 %
+#4

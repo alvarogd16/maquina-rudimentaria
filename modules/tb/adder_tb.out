@@ -1,0 +1,57 @@
+#! /usr/bin/vvp
+:ivl_version "10.3 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x55c0fc5a6d50 .scope module, "adder_tb" "adder_tb" 2 3;
+ .timescale 0 0;
+P_0x55c0fc5a6ed0 .param/l "N" 1 2 5, +C4<00000000000000000000000000001000>;
+v0x55c0fc5b8250_0 .var "in_a", 7 0;
+v0x55c0fc5b8340_0 .var "in_b", 7 0;
+v0x55c0fc5b8410_0 .net "out", 7 0, L_0x55c0fc5b8510;  1 drivers
+S_0x55c0fc571070 .scope module, "ADD8_1" "adder" 2 10, 3 1 0, S_0x55c0fc5a6d50;
+ .timescale 0 0;
+    .port_info 0 /INPUT 8 "in_a"
+    .port_info 1 /INPUT 8 "in_b"
+    .port_info 2 /OUTPUT 8 "out"
+P_0x55c0fc571240 .param/l "N" 0 3 3, +C4<00000000000000000000000000001000>;
+v0x55c0fc571360_0 .net "in_a", 7 0, v0x55c0fc5b8250_0;  1 drivers
+v0x55c0fc5b8000_0 .net "in_b", 7 0, v0x55c0fc5b8340_0;  1 drivers
+v0x55c0fc5b80e0_0 .net "out", 7 0, L_0x55c0fc5b8510;  alias, 1 drivers
+L_0x55c0fc5b8510 .arith/sum 8, v0x55c0fc5b8250_0, v0x55c0fc5b8340_0;
+    .scope S_0x55c0fc5a6d50;
+T_0 ;
+    %vpi_call 2 17 "$dumpfile", "adder_tb.vcd" {0 0 0};
+    %vpi_call 2 18 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x55c0fc5a6d50 {0 0 0};
+    %pushi/vec4 5, 0, 8;
+    %store/vec4 v0x55c0fc5b8250_0, 0, 8;
+    %pushi/vec4 1, 0, 8;
+    %store/vec4 v0x55c0fc5b8340_0, 0, 8;
+    %delay 1, 0;
+    %pushi/vec4 9, 0, 8;
+    %store/vec4 v0x55c0fc5b8250_0, 0, 8;
+    %pushi/vec4 100, 0, 8;
+    %store/vec4 v0x55c0fc5b8340_0, 0, 8;
+    %delay 1, 0;
+    %pushi/vec4 255, 0, 8;
+    %store/vec4 v0x55c0fc5b8250_0, 0, 8;
+    %pushi/vec4 9, 0, 8;
+    %store/vec4 v0x55c0fc5b8340_0, 0, 8;
+    %delay 1, 0;
+    %pushi/vec4 255, 0, 8;
+    %store/vec4 v0x55c0fc5b8250_0, 0, 8;
+    %pushi/vec4 2, 0, 8;
+    %store/vec4 v0x55c0fc5b8340_0, 0, 8;
+    %delay 1, 0;
+    %vpi_call 2 36 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "adder_tb.v";
+    "./../adder.v";

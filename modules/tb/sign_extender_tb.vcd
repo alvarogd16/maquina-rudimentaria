@@ -1,0 +1,31 @@
+$date
+	Mon Mar  7 22:07:58 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ms
+$end
+$scope module sign_extender_tb $end
+$var wire 16 ! ext_out [15:0] $end
+$var reg 8 " ext_in [7:0] $end
+$scope module EXT $end
+$var wire 8 # in [7:0] $end
+$var wire 16 $ out [15:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b101 $
+b101 #
+b101 "
+b101 !
+$end
+#1000
+b1111111111111011 !
+b1111111111111011 $
+b11111011 "
+b11111011 #
+#2000

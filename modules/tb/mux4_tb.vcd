@@ -1,0 +1,57 @@
+$date
+	Mon Mar  7 16:48:09 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ms
+$end
+$scope module mux4_tb $end
+$var wire 8 ! mux_out [7:0] $end
+$var reg 8 " mux_in_a [7:0] $end
+$var reg 8 # mux_in_b [7:0] $end
+$var reg 8 $ mux_in_c [7:0] $end
+$var reg 8 % mux_in_d [7:0] $end
+$var reg 2 & mux_sel [1:0] $end
+$scope module MUX4_1 $end
+$var wire 8 ' in_a [7:0] $end
+$var wire 8 ( in_b [7:0] $end
+$var wire 8 ) in_c [7:0] $end
+$var wire 8 * in_d [7:0] $end
+$var wire 2 + sel [1:0] $end
+$var reg 8 , out [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b10101010 ,
+b0 +
+b1010 *
+b10100000 )
+b0 (
+b10101010 '
+b0 &
+b1010 %
+b10100000 $
+b0 #
+b10101010 "
+b10101010 !
+$end
+#1000
+b0 !
+b0 ,
+b1 &
+b1 +
+#2000
+b10100000 !
+b10100000 ,
+b10 &
+b10 +
+#3000
+b1010 !
+b1010 ,
+b11 &
+b11 +
+#5000
