@@ -96,36 +96,27 @@ always # 0.5 clk = ~clk;
 initial begin
     $dumpfile("address_calc.vcd");
     $dumpvars(0, address_calc);
-
-    // // Initialize variables
-    // ir_in = 'hFFAA;
-
-    // // Señales de control
-    // ld_ir = 1;      // Cargo la instrucción
-    // ld_rdir = 0;
-    // ld_pc = 1;
-    // mux_1_pc = 0;
-    // reset_pc_sel = 1;
-
-
-    // # 1
-    // ld_ir = 0;
-    // ld_rdir = 1;
-    // reset_pc_sel = 0;
-
-    // # 2
-    // mux_1_pc = 1;
-
-    // # 1
-    // mux_1_pc = 0;
-
-    // # 5
-    // reset_pc_sel = 1;
-
-    // # 1
-    // reset_pc_sel = 0;
     
-    # 10;
+    // --- Fetch ----
+
+    // Reset PC - PC to 0
+    reset_pc_sel = 1;
+    ld_pc = 1;
+    # 1;
+
+    // Cicle 0 - Access an instruction in memory from PC
+    ld_ir = 0;
+    ld_rdir = 0;
+    ld_pc = 0;
+    mux_1_pc = 0;
+    reset_pc_sel = 0;
+    mem_w = 0;
+    # 1;
+
+    // Cicle 1 - Load the instruction in IR
+    ld_ir = 1;
+    # 1;
+
     $finish;
 end
 
